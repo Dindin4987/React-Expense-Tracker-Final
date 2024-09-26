@@ -46,10 +46,10 @@ const AddTransaction = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} style={formStyles} className="text-black">
-        <div>
-          <label>
+    <div className="bg-gray-800 p-6 rounded-lg max-w-md mx-auto">
+      <form onSubmit={handleSubmit} className="text-black">
+        <div className="mb-4 flex items-center">
+          <label className="inline-flex items-center">
             <input
               type="radio"
               name="type"
@@ -71,10 +71,10 @@ const AddTransaction = () => {
           </label>
         </div>
 
-        <div>
-          <label>Date</label>
+        <div className="mb-4">
+          <label className="block text-gray-300">Date</label>
           <input
-            className="text-black"
+            className="mt-1 p-2 w-full bg-gray-900 text-gray-300 rounded"
             type="date"
             name="date"
             value={date}
@@ -83,9 +83,9 @@ const AddTransaction = () => {
         </div>
 
         <div>
-          <label>Time</label>
+          <label className="block text-gray-300">Time</label>
           <input
-            className="text-black"
+            className="mt-1 p-2 w-full bg-gray-900 text-gray-300 rounded"
             type="time"
             name="time"
             value={time}
@@ -93,10 +93,10 @@ const AddTransaction = () => {
           />
         </div>
 
-        <div>
-          <label>Category</label>
+        <div className="mb-4">
+          <label className="block text-gray-300">Category</label>
           <input
-            className="text-black"
+            className="mt-1 p-2 w-full bg-gray-900 text-gray-300 rounded"
             type="text"
             name="category"
             placeholder="Different"
@@ -105,10 +105,10 @@ const AddTransaction = () => {
           />
         </div>
 
-        <div>
-          <label>Sum</label>
+        <div className="mb-4">
+          <label className="block text-gray-300">Sum (UAH)</label>
           <input
-            className="text-black"
+            className="mt-1 p-2 w-full bg-gray-900 text-gray-300 rounded"
             type="number"
             name="amount"
             placeholder="Enter the amount"
@@ -117,10 +117,11 @@ const AddTransaction = () => {
           />
         </div>
 
-        <div>
-          <label>Comment</label>
-          <input
-            className="text-black"
+        <div ClassName="mb-4">
+          <label className="block text-gray-300">Comment</label>
+          <textarea
+            className="mt-1 p-2 w-full bg-gray-900 text-gray-300 rounded"
+            row="3"
             type="text"
             name="comment"
             placeholder="Enter the text"
@@ -129,7 +130,10 @@ const AddTransaction = () => {
           />
         </div>
 
-        <button type="submit" style={buttonStyles}>
+        <button
+          type="submit"
+          className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+        >
           Add
         </button>
       </form>
@@ -138,25 +142,26 @@ const AddTransaction = () => {
 };
 
 // Inline styles for form
-const formStyles = {
-  display: "flex",
-  flexDirection: "column",
-  backgroundColor: "#1e1e1e",
-  padding: "20px",
-  borderRadius: "10px",
-  width: "300px",
-  color: "#fff",
-  gap: "10px",
-};
+// const formStyles = {
+//   display: "flex",
+//   flexDirection: "column",
+//   backgroundColor: "#1e1e1e",
+//   padding: "20px",
+//   borderRadius: "10px",
+//     width: "566px",
+//   height: "600px",
+//   color: "#fff",
+//   gap: "10px",
+// };
 
-const buttonStyles = {
-  backgroundColor: "#00ff00",
-  color: "#000",
-  border: "none",
-  width: "50px",
-  padding: "5px",
-  cursor: "pointer",
-  borderRadius: "5px",
-};
+// const buttonStyles = {
+//   backgroundColor: "#00ff00",
+//   color: "#000",
+//   border: "none",
+//   width: "50px",
+//   padding: "5px",
+//   cursor: "pointer",
+//   borderRadius: "5px",
+// };
 
 export default AddTransaction;

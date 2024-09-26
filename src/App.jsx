@@ -17,6 +17,7 @@ import { RestrictedRoute } from "./components/RestrictedRoute";
 import ExpenseList from "./components/ExpenseList";
 import IncomeList from "./components/IncomeList";
 import AddTransaction from "./components/AddTransaction";
+import Donut from "./components/Donut";
 
 
 
@@ -37,9 +38,8 @@ function App() {
     
       <ExpenseList />
       <IncomeList />
-      <RegisterPage />
-      <LoginPage />
-      <AddTransaction />
+      <MainTransactions />
+      
     </>
   );
 }

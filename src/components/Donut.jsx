@@ -13,26 +13,24 @@ const Donut = () => {
         backgroundColor: ["#0EF387", "#FAFAFA", "#353333", "#0EF387"],
         hoverBackgroundColor: ["#0EF387", "#FAFAFA", "#353333", "#0EF387"],
         borderColor: ["#0EF387", "#FAFAFA", "#353333", "#0EF387"],
-        circumference: 180,
-        rotation: 270,
-        // borderWidth: 1,
-        cutout: "70%",
+        cutout: "70%", // It's in the right place
       },
     ],
   };
 
   const options = {
     responsive: true,
+    circumference: 180, // Move circumference here
+    rotation: 270, // Move rotation here
     plugins: {
       legend: {
         display: true,
-        position: "right", // Change this to 'left', 'top', 'bottom', etc. as needed
+        position: "right",
         labels: {
-          color: "white", // Customize the text color
+          color: "white",
           font: {
             size: 10,
           },
-          // boxWidth: 20, // Customize box size
         },
       },
       tooltip: {
@@ -46,7 +44,7 @@ const Donut = () => {
     beforeDatasetsDraw(chart, args, pluginOptions) {
       const {
         ctx,
-        chartArea: { top, bottom, left, right, width, height },
+        chartArea: { width, height },
       } = chart;
 
       const xCenter = chart.getDatasetMeta(0).data[0].x;
@@ -57,10 +55,12 @@ const Donut = () => {
       ctx.font = "bold 20px sans-serif";
       ctx.textAlign = "center";
       ctx.fillText("100%", xCenter, yCenter);
+      ctx.restore();
     },
   };
+
   return (
-    <div style={{ width: "292px", height: "285px" }} className="w-1/2">
+    <div className="w-1/2" style={{ width: "292px", height: "285px" }}>
       <p className="pt-8">Expenses categories</p>
       <Doughnut data={data} options={options} plugins={[gaugeText]} />
     </div>
