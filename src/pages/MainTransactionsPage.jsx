@@ -6,9 +6,9 @@ import ExpenseIncomeBtn from "../components/ExpenseIncomeBtn";
 const MainTransactions = () => {
   return (
     <div className="text-white container flex">
-      <div className="basis-1/2">
-        <h1>Expense Log</h1>
-        <p>
+      <div className="basis-1/2 mx-20">
+        <h1 className="text-3xl">Expense Log</h1>
+        <p className="text-xs mb-12">
           Capture and organize every penny spent with ease! A clear view of your
           financial habits at your fingertips.
         </p>
@@ -16,7 +16,7 @@ const MainTransactions = () => {
         <Donut />
       </div>
 
-      <div>
+      <div className="flex-1">
         <AddTransaction />
       </div>
     </div>

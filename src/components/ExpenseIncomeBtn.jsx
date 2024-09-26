@@ -6,7 +6,7 @@ const ExpenseIncomeBtn = () => {
   return (
     <div>
       <div className="flex gap-10 mb-8">
-        <div className="p-4 rounded-xl shadow flex bg-tertiary">
+        <div className="p-4 w-64 rounded-xl shadow flex bg-tertiary" >
           <span>
             <MdArrowOutward className="icons bg-primary rounded-lg mt-2 text-3xl" />
           </span>
@@ -16,7 +16,7 @@ const ExpenseIncomeBtn = () => {
           </div>
         </div>
 
-        <div className="p-4 rounded-xl shadow flex bg-tertiary">
+        <div className="p-4 w-64 rounded-xl shadow flex bg-tertiary">
           <span>
             <GoArrowDownLeft className="icons bg-primary rounded-lg mt-2 text-3xl" />
           </span>

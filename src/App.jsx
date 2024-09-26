@@ -10,7 +10,6 @@ import { refreshUser } from "./redux/authOperations";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { PrivateRoute } from "./components/PrivateRoute";
 import { RestrictedRoute } from "./components/RestrictedRoute";
@@ -19,10 +18,7 @@ import IncomeList from "./components/IncomeList";
 import AddTransaction from "./components/AddTransaction";
 import Donut from "./components/Donut";
 
-
-
 function App() {
-  
   // const dispatch = useDispatch();
   // const navigate = useNavigate();
 
@@ -35,11 +31,8 @@ function App() {
   return (
     <>
       <WelcomePage />
-    
-      <ExpenseList />
-      <IncomeList />
+
       <MainTransactions />
-      
     </>
   );
 }
