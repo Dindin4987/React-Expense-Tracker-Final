@@ -6,10 +6,10 @@ export const authSlice = createSlice({
   initialState: {
     user: { name: null, email: null },
     token: null,
-    isLoggedIn: false,
-    isLoading: false,
-    isError: false,
-    isRefreshing: false,
+    // isLoggedIn: false,
+    // isLoading: false,
+    // isError: false,
+    // isRefreshing: false,
   },
   reducers: {},
   extraReducers: builder => {
@@ -31,7 +31,7 @@ export const authSlice = createSlice({
       })
       .addCase(login.fulfilled, (state, action) => {
         state.user = action.payload.user;
-        state.token = action.payload.token;
+        state.token = action.payload.accessToken;
         state.isLoggedIn = true;
       })
       .addCase(login.rejected, (state, _action) => {
