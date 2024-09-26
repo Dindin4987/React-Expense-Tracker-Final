@@ -46,11 +46,12 @@ const AddTransaction = () => {
   };
 
   return (
-    <div className="bg-gray-800 p-6 rounded-lg max-w-md mx-auto">
+    <div className="bg-gray-800 p-6 rounded-lg w-full">
       <form onSubmit={handleSubmit} className="text-black">
         <div className="mb-4 flex items-center">
           <label className="inline-flex items-center">
             <input
+              className="mx-2"
               type="radio"
               name="type"
               value="expense"
@@ -61,6 +62,7 @@ const AddTransaction = () => {
           </label>
           <label>
             <input
+              className="mx-2"
               type="radio"
               name="type"
               value="income"
@@ -71,26 +73,27 @@ const AddTransaction = () => {
           </label>
         </div>
 
-        <div className="mb-4">
-          <label className="block text-gray-300">Date</label>
-          <input
-            className="mt-1 p-2 w-full bg-gray-900 text-gray-300 rounded"
-            type="date"
-            name="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
-        </div>
-
-        <div>
-          <label className="block text-gray-300">Time</label>
-          <input
-            className="mt-1 p-2 w-full bg-gray-900 text-gray-300 rounded"
-            type="time"
-            name="time"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-          />
+        <div className="flex">
+          <div className="mb-4 mr-7">
+            <label className="block text-gray-300">Date</label>
+            <input
+              className="mt-1 p-2 w-full bg-gray-900 text-gray-300 rounded"
+              type="date"
+              name="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </div>
+          <div>
+            <label className="block text-gray-300">Time</label>
+            <input
+              className="mt-1 p-2 w-full bg-gray-900 text-gray-300 rounded"
+              type="time"
+              name="time"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+            />
+          </div>
         </div>
 
         <div className="mb-4">
