@@ -1,5 +1,4 @@
 import "./App.css";
-import SharedLayout from "./components/SharedLayout";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import WelcomePage from "./pages/WelcomePage";
@@ -31,8 +30,8 @@ function App() {
   return isRefreshing ? (
     <h1>Refreshing User... Please wait.</h1>
   ) : (
-    <>
-      <Routes path="/" element={<SharedLayout />}>
+    <Routes>
+      
         <Route index element={<WelcomePage />} />
         <Route
           path="/register"
@@ -52,8 +51,8 @@ function App() {
             <PrivateRoute component={MainTransactions} redirectTo="/login" />
           }
         />
-      </Routes>
-    </>
+      
+    </Routes>
   );
 }
 

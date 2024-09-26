@@ -4,7 +4,7 @@ import ImageUser from "../images/ImageUser.jpg";
 
 const Header2 = () => {
   return (
-    <div className="container w-full flex justify-between bg-black text-secondary">
+    <div className="container w-full flex justify-between bg-black text-secondary mt-10">
       <div className="text-secondary flex  gap-1 font-bold">
         <img src={Icon} alt="logo" className="h-6 w-6 ml-12" />{" "}
         <span>
