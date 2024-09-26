@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     dispatch(refreshUser());
-  }, [dispatch, navigate]);
+  }, [dispatch]);
 
   return isRefreshing ? (
     <h1>Refreshing User... Please wait.</h1>

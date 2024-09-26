@@ -2,6 +2,8 @@ import React from "react";
 import AddTransaction from "../components/AddTransaction";
 import Donut from "../components/Donut";
 import ExpenseIncomeBtn from "../components/ExpenseIncomeBtn";
+import ExpenseList from "../components/ExpenseList";
+import IncomeList from "../components/IncomeList";
 
 const MainTransactions = () => {
   return (
@@ -19,6 +21,8 @@ const MainTransactions = () => {
       <div className="flex-1">
         <AddTransaction />
       </div>
+      <ExpenseList />
+      <IncomeList />
     </div>
   );
 };
