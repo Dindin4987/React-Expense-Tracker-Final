@@ -1,7 +1,7 @@
 import React from "react";
 import LeftSide from "../components/LeftSide";
 import ImageUsers from "../components/ImageUsers";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const WelcomePage = () => {
   return (
@@ -23,9 +23,9 @@ const WelcomePage = () => {
           </p>
         </div>
 
-        {/* <div className="text-left mb-36">
+        <div className="text-left mb-36">
           <Link
-            to="/signup"
+            to="/register"
             type="Link"
             className="bg-primary rounded-full px-7 py-2 mr-7"
           >
@@ -33,13 +33,14 @@ const WelcomePage = () => {
           </Link>
 
           <Link
-            to="/signin"
+            to="/login"
             type="Link"
             className="text-secondary rounded-full px-7 py-2 border"
           >
             Sign In
           </Link>
-        </div> */}
+        </div>
+
         <div className="">
           <ImageUsers />
         </div>
