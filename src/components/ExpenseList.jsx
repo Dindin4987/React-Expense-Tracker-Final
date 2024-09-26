@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteExpense, editExpense } from "../redux/expensesSlice";
+import { deleteExpense } from "../redux/expensesSlice";
 import EditForm from "../components/EditForm";
 
 function ExpenseList() {
@@ -10,8 +10,8 @@ function ExpenseList() {
 
   return (
     <div>
-      <h3 className="text-lg">Expenses</h3>
-      <ul>
+      <h3 className="text-lg text-white">Expenses</h3>
+      <ul className="text-white">
         {expenses.map((expense) => (
           <li key={expense.id}>
             {expense.category} {expense.comment} {expense.date} {expense.time} $

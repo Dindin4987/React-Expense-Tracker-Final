@@ -10,8 +10,8 @@ function IncomeList() {
 
   return (
     <div>
-      <h3 className="text-lg">Income</h3>
-      <ul>
+      <h3 className="text-lg text-white">Income</h3>
+      <ul className="text-white">
         {income.map((inc) => (
           <li key={inc.id}>
             {inc.category} {inc.comment} {inc.date} {inc.time} ${inc.amount}{" "}
