@@ -46,7 +46,7 @@ const AddTransaction = () => {
   };
 
   return (
-    <div className="bg-gray-800 p-6 rounded-lg w-full">
+    <div className="bg-gray-700 p-6 rounded-lg w-full">
       <form onSubmit={handleSubmit} className="text-black">
         <div className="mb-4 flex items-center">
           <label className="inline-flex items-center">
@@ -120,7 +120,7 @@ const AddTransaction = () => {
           />
         </div>
 
-        <div ClassName="mb-4">
+        <div className="mb-4">
           <label className="block text-gray-300">Comment</label>
           <textarea
             className="mt-1 p-2 w-full bg-gray-900 text-gray-300 rounded"

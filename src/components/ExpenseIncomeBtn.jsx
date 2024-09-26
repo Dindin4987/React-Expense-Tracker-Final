@@ -5,8 +5,8 @@ import { GoArrowDownLeft } from "react-icons/go";
 const ExpenseIncomeBtn = () => {
   return (
     <div>
-      <div className="flex gap-10 mb-8">
-        <div className="p-4 w-64 rounded-xl shadow flex bg-tertiary" >
+      <div className="flex gap-10 mb-8 ">
+        <div className="p-4 w-64 rounded-xl shadow flex bg-gray-700">
           <span>
             <MdArrowOutward className="icons bg-primary rounded-lg mt-2 text-3xl" />
           </span>
@@ -16,7 +16,7 @@ const ExpenseIncomeBtn = () => {
           </div>
         </div>
 
-        <div className="p-4 w-64 rounded-xl shadow flex bg-tertiary">
+        <div className="p-4 w-64 rounded-xl shadow flex bg-gray-700">
           <span>
             <GoArrowDownLeft className="icons bg-primary rounded-lg mt-2 text-3xl" />
           </span>
