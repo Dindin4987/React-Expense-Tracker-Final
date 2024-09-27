@@ -19,39 +19,36 @@ import Donut from "./components/Donut";
 
 function App() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const { isRefreshing } = useAuth();
 
   useEffect(() => {
     dispatch(refreshUser());
-  }, [dispatch]);
+  }, [refreshUser]);
 
   return isRefreshing ? (
     <h1>Refreshing User... Please wait.</h1>
   ) : (
     <Routes>
-      
-        <Route index element={<WelcomePage />} />
-        <Route
-          path="/register"
-          element={
-            <RestrictedRoute component={RegisterPage} redirectTo="/dashboard" />
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <RestrictedRoute component={LoginPage} redirectTo="/dashboard" />
-          }
-        />
-        <Route
-          path="/dashboard"
-          element={
-            <PrivateRoute component={MainTransactions} redirectTo="/login" />
-          }
-        />
-      
+      <Route index element={<WelcomePage />} />
+      <Route
+        path="/register"
+        element={
+          <RestrictedRoute component={RegisterPage} redirectTo="/login" />
+        }
+      />
+      <Route
+        path="/login"
+        element={
+          <RestrictedRoute component={LoginPage} redirectTo="/dashboard" />
+        }
+      />
+      <Route
+        path="/dashboard"
+        element={
+          <PrivateRoute component={MainTransactions} redirectTo="/login" />
+        }
+      />
     </Routes>
   );
 }
