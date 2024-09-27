@@ -1,6 +1,6 @@
 import React from "react";
 import Icon from "../images/Icon.svg";
-import ImageUser from "../images/ImageUser.jpg";
+import UserDropDown from "./UserDropDown";
 
 const Header2 = () => {
   return (
@@ -21,7 +21,7 @@ const Header2 = () => {
         </button>
       </div>
 
-      <div className="flex rounded-full border px-12 py-1 mr-4">
+      {/* <div className="flex rounded-full border px-12 py-1 mr-4">
         <img
           src={ImageUser}
           alt="user"
@@ -30,6 +30,9 @@ const Header2 = () => {
         <div>
           <p>Geraldine Mailla</p>
         </div>
+      </div> */}
+      <div>
+        <UserDropDown />
       </div>
     </div>
   );
