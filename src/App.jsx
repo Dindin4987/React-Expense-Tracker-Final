@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     dispatch(refreshUser());
-  }, [refreshUser]);
+  }, [dispatch]);
 
   return isRefreshing ? (
     <h1>Refreshing User... Please wait.</h1>
@@ -47,6 +47,18 @@ function App() {
         path="/dashboard"
         element={
           <PrivateRoute component={MainTransactions} redirectTo="/login" />
+        }
+      />
+
+      <Route
+        path="/expenselist"
+        element={<PrivateRoute component={ExpenseList} redirectTo="/login" />}
+      />
+
+      <Route
+        path="/incomelist"
+        element={
+          <PrivateRoute component={IncomeList} redirectTo="/login" />
         }
       />
     </Routes>

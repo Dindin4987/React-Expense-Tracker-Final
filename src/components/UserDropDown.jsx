@@ -1,27 +1,34 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import ImageUser from "../images/ImageUser.jpg";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/authOperations";
 
 export default function UserDropDown() {
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    console.log(logout);
+  };
+
   return (
     <Menu as="div" className="relative inline-block text-left">
       <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-full border px-12 py-1 mr-4">
-        
-          <img
-            src={ImageUser}
-            alt="user"
-            className="h-6 w-6 rounded-full bg-black mr-2"
+        <img
+          src={ImageUser}
+          alt="user"
+          className="h-6 w-6 rounded-full bg-black mr-2"
+        />
+        <div>
+          <p>Geraldine Mailla</p>
+        </div>
+        <span>
+          <ChevronDownIcon
+            aria-hidden="true"
+            className="-mr-1 h-5 w-5 text-gray-400"
           />
-          <div>
-            <p>Geraldine Mailla</p>
-          </div>
-          <span>
-            <ChevronDownIcon
-              aria-hidden="true"
-              className="-mr-1 h-5 w-5 text-gray-400"
-            />
-          </span>
-        
+        </span>
       </MenuButton>
 
       <MenuItems
@@ -38,16 +45,15 @@ export default function UserDropDown() {
             </a>
           </MenuItem>
 
-          <form action="#" method="POST">
-            <MenuItem>
-              <button
-                type="submit"
-                className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
-              >
-                Log out
-              </button>
-            </MenuItem>
-          </form>
+          <MenuItem>
+            <button
+              onClick={handleLogout}
+              type="submit"
+              className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+            >
+              Log out
+            </button>
+          </MenuItem>
         </div>
       </MenuItems>
     </Menu>

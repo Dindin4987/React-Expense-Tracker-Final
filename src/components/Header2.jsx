@@ -1,6 +1,7 @@
 import React from "react";
 import Icon from "../images/Icon.svg";
 import UserDropDown from "./UserDropDown";
+import { Link } from "react-router-dom";
 
 const Header2 = () => {
   return (
@@ -13,12 +14,19 @@ const Header2 = () => {
       </div>
 
       <div>
-        <button className="text-secondary border rounded-full px-12 py-1 text-sm mr-2">
+        <Link
+          to="/expenselist"
+          type="Link"
+          className="text-secondary border rounded-full px-12 py-1 text-sm mr-2">
           All Expense
-        </button>
-        <button className="text-secondary border rounded-full px-12 py-1 text-sm">
+        </Link>
+
+        <Link
+        to="/incomelist"
+        type="Link"
+        className="text-secondary border rounded-full px-12 py-1 text-sm">
           All Income
-        </button>
+        </Link>
       </div>
 
       {/* <div className="flex rounded-full border px-12 py-1 mr-4">
