@@ -12,7 +12,7 @@ function ProfileSettingsModal() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900">
+    <div>
       {/* Button to open the modal */}
       <button
         onClick={toggleModal}
