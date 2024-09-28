@@ -1,9 +1,9 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import ImageUser from "../images/ImageUser.jpg";
+import { Notify } from "notiflix";
 import { useDispatch } from "react-redux";
 import { logout } from "../redux/authOperations";
-import { useAuth } from "../redux/useAuth";
 import ProfileSettingsModal from "./ProfileSettingsModal";
 import { useState } from "react";
 
@@ -15,11 +15,10 @@ export default function UserDropDown() {
   };
 
   const dispatch = useDispatch();
-  // const { user } = useAuth();
 
   const handleLogout = () => {
     dispatch(logout());
-    console.log(logout);
+    Notify.success("Successfully logged out!");
   };
 
   return (

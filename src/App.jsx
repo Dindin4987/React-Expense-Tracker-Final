@@ -19,8 +19,6 @@ import AddTransaction from "./components/AddTransaction";
 function App() {
   const dispatch = useDispatch();
 
-  const { isRefreshing } = useAuth();
-
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     if (token) {
@@ -28,15 +26,13 @@ function App() {
     }
   }, [dispatch]);
 
-  return isRefreshing ? (
-    <h1>Refreshing User... Please wait.</h1>
-  ) : (
+  return (
     <Routes>
       <Route index element={<WelcomePage />} />
       <Route
         path="/register"
         element={
-          <RestrictedRoute component={RegisterPage} redirectTo="/dashboard" />
+          <RestrictedRoute component={RegisterPage} redirectTo="/login" />
         }
       />
       <Route
@@ -47,9 +43,7 @@ function App() {
       />
       <Route
         path="/dashboard"
-        element={
-          <PrivateRoute component={MainTransactions} redirectTo="/login" />
-        }
+        element={<PrivateRoute component={MainTransactions} redirectTo="/" />}
       />
 
       <Route
