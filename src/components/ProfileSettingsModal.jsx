@@ -7,18 +7,18 @@ function ProfileSettingsModal() {
   const [currency, setCurrency] = useState("UAH");
 
   // Function to open/close the modal
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
+  // const toggleModal = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900">
+    <div className="flex items-center justify-center">
       {/* Button to open the modal */}
       <button
         onClick={toggleModal}
         className="px-4 py-2 text-white bg-green-500 rounded-lg hover:bg-green-600"
       >
-        Open Profile Settings
+        Profile settings
       </button>
 
       {/* Modal */}

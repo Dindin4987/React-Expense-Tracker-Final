@@ -9,6 +9,7 @@ function ExpenseList() {
   const [editingExpense, setEditingExpense] = useState(null);
 
   return (
+    
     <div>
       <h3 className="text-lg text-white">Expenses</h3>
       <ul className="text-white">
