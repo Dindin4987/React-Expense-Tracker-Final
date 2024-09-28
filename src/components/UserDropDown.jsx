@@ -10,7 +10,7 @@ import { useState } from "react";
 export default function UserDropDown() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleModal = ({ isOpen, onClose}) => {
+  const toggleModal = () => {
     setIsOpen(!isOpen);
   };
 

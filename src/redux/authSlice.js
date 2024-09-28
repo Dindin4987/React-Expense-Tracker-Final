@@ -10,7 +10,7 @@ export const authSlice = createSlice({
     isLoggedIn: false,
     isRefreshing: false,
   },
-  reducers: {},
+  
   extraReducers: builder => {
     builder
       .addCase(register.fulfilled, (state, action) => {
@@ -29,7 +29,7 @@ export const authSlice = createSlice({
       })
       
       .addCase(logout.fulfilled, (state) => {
-        state.user = null;
+        state.user = { name: null, email: null };
         state.token = null;
         state.refreshToken = null;
         state.isLoggedIn = false;
