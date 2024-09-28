@@ -6,16 +6,15 @@ import MainTransactions from "./pages/MainTransactionsPage";
 
 import { useAuth } from "./redux/useAuth";
 import { refreshUser } from "./redux/authOperations";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { PrivateRoute } from "./components/PrivateRoute";
 import { RestrictedRoute } from "./components/RestrictedRoute";
 import ExpenseList from "./components/ExpenseList";
 import IncomeList from "./components/IncomeList";
 import AddTransaction from "./components/AddTransaction";
-import Donut from "./components/Donut";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,7 +22,10 @@ function App() {
   const { isRefreshing } = useAuth();
 
   useEffect(() => {
-    dispatch(refreshUser());
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      dispatch(refreshUser());
+    }
   }, [dispatch]);
 
   return isRefreshing ? (
@@ -34,7 +36,7 @@ function App() {
       <Route
         path="/register"
         element={
-          <RestrictedRoute component={RegisterPage} redirectTo="/login" />
+          <RestrictedRoute component={RegisterPage} redirectTo="/dashboard" />
         }
       />
       <Route
@@ -52,14 +54,12 @@ function App() {
 
       <Route
         path="/expenselist"
-        element={<PrivateRoute component={ExpenseList} redirectTo="/login" />}
+        element={<PrivateRoute component={ExpenseList} redirectTo="/" />}
       />
 
       <Route
         path="/incomelist"
-        element={
-          <PrivateRoute component={IncomeList} redirectTo="/login" />
-        }
+        element={<PrivateRoute component={IncomeList} redirectTo="/" />}
       />
     </Routes>
   );
