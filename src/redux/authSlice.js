@@ -44,7 +44,7 @@ export const authSlice = createSlice({
       .addCase(logout.fulfilled, (state) => {
         state.user = null;
         state.token = null;
-        state.isLoggedIn = false;
+        localStorage.removeItem("authToken");
       })
       .addCase(logout.rejected, (state, _action) => {
         state.isLoggedIn = true;

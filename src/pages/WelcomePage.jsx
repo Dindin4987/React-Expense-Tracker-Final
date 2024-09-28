@@ -3,10 +3,15 @@ import LeftSide from "../components/LeftSide";
 import ImageUsers from "../components/ImageUsers";
 import { Link } from "react-router-dom";
 import Header1 from "../components/Header1";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Title } from "chart.js";
 
 const WelcomePage = () => {
   return (
-    <>
+    <HelmetProvider>
+      <Helmet>
+        <title>Expense Tracker</title>
+      </Helmet>
       <Header1 />
       <div className="container flex bg-black my-10">
         <LeftSide />
@@ -50,7 +55,7 @@ const WelcomePage = () => {
           </div>
         </div>
       </div>
-    </>
+    </HelmetProvider>
   );
 };
 

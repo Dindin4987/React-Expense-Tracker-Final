@@ -29,16 +29,7 @@ const Header2 = () => {
         </Link>
       </div>
 
-      {/* <div className="flex rounded-full border px-12 py-1 mr-4">
-        <img
-          src={ImageUser}
-          alt="user"
-          className="h-6 w-6 rounded-full bg-black mr-2"
-        />
-        <div>
-          <p>Geraldine Mailla</p>
-        </div>
-      </div> */}
+      
       <div>
         <UserDropDown />
       </div>
