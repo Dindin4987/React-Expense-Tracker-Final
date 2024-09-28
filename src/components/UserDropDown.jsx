@@ -3,13 +3,13 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import ImageUser from "../images/ImageUser.jpg";
 import { useDispatch } from "react-redux";
 import { logout } from "../redux/authOperations";
+import { useAuth } from "../redux/useAuth";
 import ProfileSettingsModal from "./ProfileSettingsModal";
 import { useState } from "react";
 
 export default function UserDropDown() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Function to open/close the modal
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
