@@ -3,10 +3,14 @@ import LoginForm from "../components/LoginForm";
 import { Link } from "react-router-dom";
 import LeftSide from "../components/LeftSide";
 import Header1 from "../components/Header1";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const LoginPage = () => {
   return (
-    <>
+    <HelmetProvider>
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <Header1 />
       <div className="container flex bg-black mt-10">
         <LeftSide />
@@ -29,7 +33,7 @@ const LoginPage = () => {
           </p>
         </div>
       </div>
-    </>
+    </HelmetProvider>
   );
 };
 

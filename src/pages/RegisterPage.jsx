@@ -3,10 +3,14 @@ import RegisterForm from "../components/RegisterForm";
 import { Link } from "react-router-dom";
 import LeftSide from "../components/LeftSide";
 import Header1 from "../components/Header1";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const RegisterPage = () => {
   return (
-    <>
+    <HelmetProvider>
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <Header1 />
       <div className="container flex bg-black mt-10">
         <LeftSide />
@@ -30,7 +34,7 @@ const RegisterPage = () => {
           </p>
         </div>
       </div>
-    </>
+    </HelmetProvider>
   );
 };
 

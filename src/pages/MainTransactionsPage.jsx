@@ -5,10 +5,14 @@ import ExpenseIncomeBtn from "../components/ExpenseIncomeBtn";
 import ExpenseList from "../components/ExpenseList";
 import IncomeList from "../components/IncomeList";
 import Header2 from "../components/Header2";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const MainTransactions = () => {
   return (
-    <>
+    <HelmetProvider>
+      <Helmet>
+        <title>Expense Tracker</title>
+      </Helmet>
       <Header2 />
       <div className="text-white container flex mt-10">
         <div className="basis-1/2 mx-20">
@@ -27,7 +31,7 @@ const MainTransactions = () => {
       </div>
       <ExpenseList />
       <IncomeList />
-    </>
+    </HelmetProvider>
   );
 };
 
