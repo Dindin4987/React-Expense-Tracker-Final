@@ -15,7 +15,7 @@ function IncomeList() {
       <Header2 />
       <div className="container flex  mt-12">
         <div className="basis-1/2 text-white ml-10">
-          <h3 className="text-3xl text-white">Income</h3>
+          <h3 className="text-3xl text-white">All Income</h3>
           <p className="text-xs">
             Track and celebrate every bit of earnings effortlessly! Gain
             insights into your total revenue in a snap.
