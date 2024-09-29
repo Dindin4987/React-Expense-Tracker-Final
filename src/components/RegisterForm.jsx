@@ -1,6 +1,7 @@
 import React from "react";
 import { register } from "../redux/authOperations";
 import { useDispatch } from "react-redux";
+import { Notify } from "notiflix";
 
 /* Controlled Form Component vs Uncontrolled Form Component
  *
@@ -21,7 +22,9 @@ const RegisterForm = () => {
         password: form.elements.password.value,
       })
     );
+
     form.reset();
+    Notify.success("You've successfully registered! Please login.");
   };
 
   return (

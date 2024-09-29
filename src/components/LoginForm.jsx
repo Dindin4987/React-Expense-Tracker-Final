@@ -1,6 +1,7 @@
 import React from "react";
 import { login } from "../redux/authOperations";
 import { useDispatch } from "react-redux";
+import { Notify } from "notiflix";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const LoginForm = () => {
       })
     );
     form.reset();
+    Notify.success("Welcome! Login successfully.");
   };
 
   return (
