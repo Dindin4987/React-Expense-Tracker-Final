@@ -37,7 +37,7 @@ function ExpenseList() {
         </div>
       </div>
 
-      <div className="ml-10 bg-gray-500">
+      <div className="ml-10 bg-gray-700">
         {/* Render Filter component */}
         <Filter
           filter={filter}
@@ -47,8 +47,8 @@ function ExpenseList() {
         />
       </div>
 
-      <table className="min-w-full border border-gray-700 text-white">
-        <thead>
+      <table className="min-w-full border border-gray-700 text-white ml-10 ">
+        <thead className="bg-gray-900">
           <tr className="text-left">
             <th className="py-2 px-4 border-b border-gray-700">Category</th>
             <th className="py-2 px-4 border-b border-gray-700">Comment</th>
@@ -58,7 +58,7 @@ function ExpenseList() {
             <th className="py-2 px-4 border-b border-gray-700">Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="bg-gray-700">
           {filteredExpenses.map((expense) => (
             <tr key={expense.id}>
               <td className="py-2 px-4 border-b border-gray-700">
@@ -79,13 +79,13 @@ function ExpenseList() {
               <td className="py-2 px-4 border-b border-gray-700">
                 <button
                   onClick={() => setEditingExpense(expense)}
-                  className="border bg-primary rounded-lg px-5 py-1"
+                  className="border bg-primary rounded-full px-9 py-1 mr-5"
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => dispatch(deleteExpense(expense.id))}
-                  className="border bg-gray-700 rounded-lg px-5 py-1"
+                  className="border bg-gray-700 rounded-full px-9 py-1"
                 >
                   Delete
                 </button>

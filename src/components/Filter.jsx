@@ -9,7 +9,7 @@ const Filter = ({ filter, setFilter }) => {
   };
 
   return (
-    <div className="container text-white">
+    <div className="container text-white bg-gray-700">
       <input className="rounded-full bg-black p-2 m-5"
         type="text"
         name="filter"
