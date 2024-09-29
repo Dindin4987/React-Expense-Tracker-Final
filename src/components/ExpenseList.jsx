@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteExpense } from "../redux/expensesSlice";
 import EditForm from "../components/EditForm";
+import ExpenseIncomeBtn from "./ExpenseIncomeBtn";
+import Header2 from "./Header2";
 
 function ExpenseList() {
   const expenses = useSelector((state) => state.expenses);
@@ -9,10 +11,23 @@ function ExpenseList() {
   const [editingExpense, setEditingExpense] = useState(null);
 
   return (
-    
-    <div>
-      <h3 className="text-lg text-white">Expenses</h3>
-      <ul className="text-white">
+    <div className="container">
+      <Header2 />
+      <div className="container flex  mt-12">
+        <div className="basis-1/2 text-white ml-10">
+          <h3 className="text-3xl text-white">Expenses</h3>
+          <p className="text-xs">
+            View and manage every transaction seamlessly! Your entire financial
+            landscape, all in one place.
+          </p>
+        </div>
+
+        <div className="flex-1">
+          <ExpenseIncomeBtn />
+        </div>
+      </div>
+
+      <ul className="text-white container bg-gray-500">
         {expenses.map((expense) => (
           <li key={expense.id}>
             {expense.category} {expense.comment} {expense.date} {expense.time} $
