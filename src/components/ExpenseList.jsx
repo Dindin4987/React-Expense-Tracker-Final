@@ -13,6 +13,8 @@ function ExpenseList() {
   const [filter, setFilter] = useState("");
   const [selectedDate, setSelectedDate] = useState("");
 
+  
+
   // Filter expenses based on filter input
   const filteredExpenses = expenses.filter(
     (expense) =>
