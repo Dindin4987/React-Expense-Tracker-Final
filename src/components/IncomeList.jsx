@@ -1,17 +1,27 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteIncome, editIncome } from "../redux/incomeSlice";
+import { deleteIncome } from "../redux/incomeSlice";
 import EditForm from "../components/EditForm";
-import Header2 from "./Header2";
 import ExpenseIncomeBtn from "./ExpenseIncomeBtn";
+import Header2 from "./Header2";
+import Filter from "./Filter";
 
 function IncomeList() {
   const income = useSelector((state) => state.income);
   const dispatch = useDispatch();
   const [editingIncome, setEditingIncome] = useState(null);
+  const [filter, setFilter] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
+
+  // Filter income based on filter input
+  const filteredIncome = income.filter(
+    (income) =>
+      income.category.toLowerCase().includes(filter.toLowerCase()) ||
+      income.comment.toLowerCase().includes(filter.toLowerCase())
+  );
 
   return (
-    <div className="container">
+    <div className="text-white">
       <Header2 />
       <div className="container flex  mt-12">
         <div className="basis-1/2 text-white ml-10">
@@ -27,25 +37,63 @@ function IncomeList() {
         </div>
       </div>
 
-      <ul className="text-white">
-        {income.map((inc) => (
-          <li key={inc.id}>
-            {inc.category} {inc.comment} {inc.date} {inc.time} ${inc.amount}{" "}
-            <button
-              onClick={() => setEditingIncome(inc)}
-              className="border bg-primary rounded-lg px-5 py-1"
-            >
-              Edit
-            </button>
-            <button
-              onClick={() => dispatch(deleteIncome(inc.id))}
-              className="border bg-gray-700 rounded-lg px-5 py-1"
-            >
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+      <div className="ml-10 bg-gray-700">
+        {/* Render Filter component */}
+        <Filter
+          filter={filter}
+          setFilter={setFilter}
+          date={selectedDate}
+          setDate={setSelectedDate}
+        />
+      </div>
+
+      <table className="min-w-full border border-gray-700 text-white ml-10 ">
+        <thead className="bg-gray-900">
+          <tr className="text-left">
+            <th className="py-2 px-4 border-b border-gray-700">Category</th>
+            <th className="py-2 px-4 border-b border-gray-700">Comment</th>
+            <th className="py-2 px-4 border-b border-gray-700">Date</th>
+            <th className="py-2 px-4 border-b border-gray-700">Time</th>
+            <th className="py-2 px-4 border-b border-gray-700">Sum</th>
+            <th className="py-2 px-4 border-b border-gray-700">Actions</th>
+          </tr>
+        </thead>
+        <tbody className="bg-gray-700">
+          {filteredIncome.map((income) => (
+            <tr key={income.id}>
+              <td className="py-2 px-4 border-b border-gray-700">
+                {income.category}
+              </td>
+              <td className="py-2 px-4 border-b border-gray-700">
+                {income.comment}
+              </td>
+              <td className="py-2 px-4 border-b border-gray-700">
+                {income.date}
+              </td>
+              <td className="py-2 px-4 border-b border-gray-700">
+                {income.time}
+              </td>
+              <td className="py-2 px-4 border-b border-gray-700">
+                ${income.amount}
+              </td>
+              <td className="py-2 px-4 border-b border-gray-700">
+                <button
+                  onClick={() => setEditingIncome(income)}
+                  className="border bg-primary rounded-full px-9 py-1 mr-5"
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => dispatch(deleteIncome(income.id))}
+                  className="border bg-gray-700 rounded-full px-9 py-1"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
       {editingIncome && (
         <EditForm

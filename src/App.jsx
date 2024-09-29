@@ -4,7 +4,6 @@ import RegisterPage from "./pages/RegisterPage";
 import WelcomePage from "./pages/WelcomePage";
 import MainTransactions from "./pages/MainTransactionsPage";
 
-import { useAuth } from "./redux/useAuth";
 import { refreshUser } from "./redux/authOperations";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -14,7 +13,6 @@ import { PrivateRoute } from "./components/PrivateRoute";
 import { RestrictedRoute } from "./components/RestrictedRoute";
 import ExpenseList from "./components/ExpenseList";
 import IncomeList from "./components/IncomeList";
-import AddTransaction from "./components/AddTransaction";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +30,7 @@ function App() {
       <Route
         path="/register"
         element={
-          <RestrictedRoute component={RegisterPage} redirectTo="/login" />
+          <RestrictedRoute component={RegisterPage} redirectTo="/dashboard" />
         }
       />
       <Route

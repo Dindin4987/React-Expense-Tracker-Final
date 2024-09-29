@@ -2,8 +2,6 @@ import React from "react";
 import AddTransaction from "../components/AddTransaction";
 import Donut from "../components/Donut";
 import ExpenseIncomeBtn from "../components/ExpenseIncomeBtn";
-import ExpenseList from "../components/ExpenseList";
-import IncomeList from "../components/IncomeList";
 import Header2 from "../components/Header2";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
@@ -29,8 +27,6 @@ const MainTransactions = () => {
           <AddTransaction />
         </div>
       </div>
-      <ExpenseList />
-      <IncomeList />
     </HelmetProvider>
   );
 };
