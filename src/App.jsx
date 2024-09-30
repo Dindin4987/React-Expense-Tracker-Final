@@ -26,32 +26,38 @@ function App() {
 
   return (
     <Routes>
-      <Route index element={<WelcomePage />} />
+      <Route
+        path="/dashboard"
+        element={<PrivateRoute redirectTo="/" component={MainTransactions} />}
+      />
+
+      <Route
+        path="/"
+        element={<RestrictedRoute redirectTo="/dashboard" component={WelcomePage} />}
+      />
+
       <Route
         path="/register"
         element={
-          <RestrictedRoute component={RegisterPage} redirectTo="/dashboard" />
+          <RestrictedRoute redirectTo="/dashboard" component={RegisterPage} />
         }
       />
+
       <Route
         path="/login"
         element={
-          <RestrictedRoute component={LoginPage} redirectTo="/dashboard" />
+          <RestrictedRoute redirectTo="/dashboard" component={LoginPage} />
         }
-      />
-      <Route
-        path="/dashboard"
-        element={<PrivateRoute component={MainTransactions} redirectTo="/" />}
       />
 
       <Route
         path="/expenselist"
-        element={<PrivateRoute component={ExpenseList} redirectTo="/" />}
+        element={<PrivateRoute redirectTo="/" component={ExpenseList} />}
       />
 
       <Route
         path="/incomelist"
-        element={<PrivateRoute component={IncomeList} redirectTo="/" />}
+        element={<PrivateRoute redirectTo="/" component={IncomeList} />}
       />
     </Routes>
   );
